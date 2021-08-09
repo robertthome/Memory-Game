@@ -31,3 +31,24 @@ a {
   width: 250px;
   margin: 50px;
 }
+
+.return {
+  margin-left: -1px;
+}
+
+/* instructions page */
+
+h2 {
+  font-size: 60px;
+  color: rgb(187, 42, 42);
+}
+
+h3 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 25px;
+}
+
+/* Styling for gameboard */
