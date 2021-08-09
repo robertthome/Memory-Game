@@ -6,7 +6,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: blue;
+  background-color: rgb(76, 76, 233);
 }
 
 h1 {
@@ -16,7 +16,11 @@ h1 {
 
 #nav-container {
   display: inline-flex;
-  margin: 45px 230px;
+  margin: 45px 210px;
+}
+
+#timed-game-btn {
+  margin-right: 100px;
 }
 
 a {
