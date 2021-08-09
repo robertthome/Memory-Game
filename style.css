@@ -32,6 +32,12 @@ a {
   margin: 50px;
 }
 
+a:hover {
+  color: blue;
+  animation: shake 0.8s;
+  font-size: 47px;
+}
+
 .return {
   margin-left: -1px;
 }
