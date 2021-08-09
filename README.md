@@ -25,4 +25,6 @@ A casual game of memory where you find a pair of images that are hidden in rows 
 
 Website: [fakorededamilola](https://dev.to/fakorededamilola/create-a-memory-game-with-js-1l9j)
 
+Article: [bost.ocks.org](https://bost.ocks.org/mike/shuffle/)
+
 Book: Eloquent JavaScript

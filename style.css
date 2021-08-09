@@ -16,6 +16,7 @@ h1 {
 
 #nav-container {
   display: inline-flex;
+  text-align: center;
   margin: 45px 210px;
 }
 
