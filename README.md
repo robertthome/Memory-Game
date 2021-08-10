@@ -27,4 +27,3 @@ Website: [fakorededamilola](https://dev.to/fakorededamilola/create-a-memory-game
 
 Article: [bost.ocks.org](https://bost.ocks.org/mike/shuffle/)
 
-Book: Eloquent JavaScript
