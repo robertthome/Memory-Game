@@ -50,17 +50,30 @@ let cardList = [
   {
     name: 'speaker',
     img: '005-speaker.png'
+  },
+  {
+    name: 'cdPlayer',
+    img: '006-cd-player.png'
+  },
+  {
+    name: 'cdPlayer',
+    img: '006-cd-player.png'
   }
 ]
 
-//shuffles the imageis of the array
+//shuffles the images of the array
 cardList.sort(() => 0.5 - Math.random())
-const grid = document.querySelector('#gameGrid')
 console.log(cardList)
-// creates an img element for each image and appends it to the page
+// creates an img element, applies img path to src, and appends images to page
 cardList.forEach((eachImg) => {
   let img = document.createElement('img')
   img.src = eachImg.img
   console.log(img)
   console.log(eachImg)
+  //append images to div
+  const grid = document.querySelector('#gameGrid')
+  grid.appendChild(img)
+  img.addEventListener('click', function () {
+    console.log(img)
+  })
 })
