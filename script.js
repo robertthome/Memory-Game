@@ -75,8 +75,6 @@ cardList.forEach((eachImg, idNum) => {
   img.addEventListener('click', flipImg)
 })
 
-//connected to eventlister to flip card
-
 function flipImg() {
   this.classList.add('selected')
   id = this.id
@@ -88,8 +86,12 @@ function flipImg() {
     checkMatch()
   }
 }
+
 const cards = document.querySelectorAll('img')
-function checkMatch() {
+
+matchedCards = []
+
+let checkMatch = () => {
   selectedImg1 = cardList[chosenCards[0]].name
   selectedImg2 = cardList[chosenCards[1]].name
 
@@ -106,6 +108,16 @@ function checkMatch() {
     cards[chosenCards[0]].removeEventListener('click', flipImg)
     cards[chosenCards[1]].removeEventListener('click', flipImg)
     chosenCards = []
-    console.log(`${selectedImg1} ${selectedImg2}`)
+    matchedCards.push(chosenCards[0], chosenCards[1])
+    addPoints()
+    if (points === 12) {
+      alert('You won!!!')
+    }
   }
+}
+
+let addPoints = () => {
+  let scoreCounter = document.querySelector('.score-counter')
+  points += 2
+  scoreCounter.innerHTML = points
 }

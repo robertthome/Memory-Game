@@ -4,9 +4,9 @@ and to call elements by id and class names*/
 /* all pages */
 html,
 body {
+  background-color: rgb(0, 146, 237);
   margin: 0;
   padding: 0;
-  background-color: rgb(76, 76, 233);
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
 #nav-container {
   display: inline-flex;
   text-align: center;
-  margin: 45px 210px;
+  margin: 45px 180px;
 }
 
 #timed-game-btn {
@@ -60,15 +60,33 @@ p {
 
 /* Styling for gameboard */
 
+.main {
+  margin-top: -40px;
+}
+
 #gameGrid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 500px;
+  justify-content: center;
+  margin-left: 525px;
   height: 300px;
   width: 400px;
 }
 
 .ad {
-  margin-top: 300px;
+  margin-top: 250px;
+  font-size: 25px;
+}
+
+img {
+  border: rgb(0, 146, 237) 2px solid;
+  background-color: rgb(0, 0, 0);
+}
+
+.score {
+  display: inline-flex;
+}
+
+.score-counter {
+  margin-left: 5px;
 }
