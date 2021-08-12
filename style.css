@@ -60,7 +60,15 @@ p {
 
 /* Styling for gameboard */
 
-/* .ad {
-  font-size: 15px;
-  margin-top: 600px;
-} */
+#gameGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 500px;
+  height: 300px;
+  width: 400px;
+}
+
+.ad {
+  margin-top: 300px;
+}

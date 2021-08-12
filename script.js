@@ -76,6 +76,7 @@ cardList.forEach((eachImg, idNum) => {
 })
 
 //connected to eventlister to flip card
+
 function flipImg() {
   this.classList.add('selected')
   id = this.id
@@ -87,22 +88,24 @@ function flipImg() {
     checkMatch()
   }
 }
-const allCards = document.querySelectorAll('img')
+const cards = document.querySelectorAll('img')
 function checkMatch() {
   selectedImg1 = cardList[chosenCards[0]].name
   selectedImg2 = cardList[chosenCards[1]].name
+
   if (chosenCards[0] === chosenCards[1]) {
-    allCards[chosenCards[0]].src = '019-front-masks.png'
-    chosenCard = []
+    cards[chosenCards[0]].src = '019-front-masks.png'
+    chosenCards = []
   } else if (selectedImg1 != selectedImg2) {
-    allCards[chosenCards[0]].src = '019-front-masks.png'
-    allCards[chosenCards[1]].src = '019-front-masks.png'
-    chosenCard = []
+    cards[chosenCards[0]].src = '019-front-masks.png'
+    cards[chosenCards[1]].src = '019-front-masks.png'
+    chosenCards = []
   } else if (selectedImg1 === selectedImg2) {
-    allCards[chosenCards[0]].src = 'check-mark.png'
-    allCards[chosenCards[1]].src = 'check-mark.png'
-    chosenCard = []
-    cardList.removeEventListener('click', flipCard)
-    console.log(selectedImg1 + ' ' + selectedImg2)
+    cards[chosenCards[0]].src = 'check-mark.png'
+    cards[chosenCards[1]].src = 'check-mark.png'
+    cards[chosenCards[0]].removeEventListener('click', flipImg)
+    cards[chosenCards[1]].removeEventListener('click', flipImg)
+    chosenCards = []
+    console.log(`${selectedImg1} ${selectedImg2}`)
   }
 }
