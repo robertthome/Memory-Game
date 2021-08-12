@@ -7,8 +7,7 @@ const instructionBtn = document.getElementById('instructions-btn')
 const gameResetBtn = document.getElementById('game-reset-btn')
 
 let points = 0
-let cardFliped = false
-let gameActive = true
+let chosenCards = []
 
 let cardList = [
   {
@@ -66,22 +65,44 @@ cardList.sort(() => 0.5 - Math.random())
 // creates an img element, applies img path to src, and appends images to page
 cardList.forEach((eachImg, idNum) => {
   let img = document.createElement('img')
-  //img of the back of the card
+  //img of the front of the card and adds id #
   img.src = '019-front-masks.png'
   img.setAttribute('id', idNum)
   //append images to div
   const grid = document.querySelector('#gameGrid')
   grid.appendChild(img)
   //each image needs a new attribute added to it when clicked
-  img.addEventListener('click', flip)
+  img.addEventListener('click', flipImg)
 })
 
 //connected to eventlister to flip card
-function flip() {
+function flipImg() {
   this.classList.add('selected')
   id = this.id
   cardList[id].name
   imgSource = cardList[id].img
   this.src = imgSource
-  console.log(this)
+  chosenCards.push(id)
+  if (chosenCards.length === 2) {
+    checkMatch()
+  }
+}
+const allCards = document.querySelectorAll('img')
+function checkMatch() {
+  selectedImg1 = cardList[chosenCards[0]].name
+  selectedImg2 = cardList[chosenCards[1]].name
+  if (chosenCards[0] === chosenCards[1]) {
+    allCards[chosenCards[0]].src = '019-front-masks.png'
+    chosenCard = []
+  } else if (selectedImg1 != selectedImg2) {
+    allCards[chosenCards[0]].src = '019-front-masks.png'
+    allCards[chosenCards[1]].src = '019-front-masks.png'
+    chosenCard = []
+  } else if (selectedImg1 === selectedImg2) {
+    allCards[chosenCards[0]].src = 'check-mark.png'
+    allCards[chosenCards[1]].src = 'check-mark.png'
+    chosenCard = []
+    cardList.removeEventListener('click', flipCard)
+    console.log(selectedImg1 + ' ' + selectedImg2)
+  }
 }
