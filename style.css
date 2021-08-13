@@ -9,6 +9,10 @@ body {
   padding: 0;
   font-family: 'Press Start 2P', cursive;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -37,29 +41,36 @@ a {
 }
 
 .start-btn {
-  margin-top: 100px;
-  margin-left: 200px;
+  margin-right: 500px;
   border: none;
 }
 
 .start-btn:hover {
-  height: 400px;
-  width: 700px;
+  height: 300px;
+  width: 600px;
+  margin-left: 150px;
 }
 
 /* Styling for gameboard */
 
+.game-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #game-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin-left: 325px;
   height: 600px;
   width: 800px;
 }
 
 .ad {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-left: 100px;
   font-size: 25px;
 }
 
