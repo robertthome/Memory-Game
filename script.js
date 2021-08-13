@@ -141,8 +141,11 @@ beginGame()
 
 const reset = document.querySelector('.reset-game')
 const gameGrid = document.querySelector('#game-grid')
+let scoreCounter = document.querySelector('.score-counter')
 
 reset.addEventListener('click', function () {
   gameGrid.innerHTML = ''
+  points = 0
+  scoreCounter.innerHTML = points
   beginGame()
 })
