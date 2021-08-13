@@ -4,77 +4,62 @@ and to call elements by id and class names*/
 /* all pages */
 html,
 body {
-  background-color: rgb(0, 146, 237);
+  background-color: rgb(0, 0, 0);
   margin: 0;
   padding: 0;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
 }
 
 h1 {
   text-align: center;
   font-size: 100px;
+  color: white;
 }
 
-#nav-container {
-  display: inline-flex;
+.game-title {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  margin-top: 100px;
+}
+
+h2 {
   text-align: center;
-  margin: 45px 180px;
-}
-
-#timed-game-btn {
-  margin-right: 100px;
 }
 
 a {
   text-decoration: none;
   font-size: 45px;
-  color: black;
+  color: rgb(207, 22, 22);
   height: 100px;
   width: 250px;
   margin: 50px;
 }
 
-a:hover {
-  color: blue;
-  animation: shake 0.8s;
-  font-size: 47px;
+.start-btn {
+  margin-top: 100px;
+  margin-left: 200px;
+  border: none;
 }
 
-.return {
-  margin-left: -1px;
-}
-
-/* instructions page */
-
-h2 {
-  font-size: 60px;
-  color: rgb(187, 42, 42);
-}
-
-h3 {
-  font-size: 40px;
-}
-
-p {
-  font-size: 25px;
+.start-btn:hover {
+  height: 400px;
+  width: 700px;
 }
 
 /* Styling for gameboard */
 
-.main {
-  margin-top: -40px;
-}
-
-#gameGrid {
+#game-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 525px;
-  height: 300px;
-  width: 400px;
+  margin-left: 325px;
+  height: 600px;
+  width: 800px;
 }
 
 .ad {
-  margin-top: 250px;
+  margin-top: 100px;
   font-size: 25px;
 }
 
@@ -84,7 +69,7 @@ img {
 }
 
 .score {
-  display: inline-flex;
+  text-align: center;
 }
 
 .score-counter {

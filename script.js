@@ -1,13 +1,4 @@
-//fetched buttons/links from landing page
-const freePlayBtn = document.getElementById('free-play-btn')
-const timedGameBtn = document.getElementById('timed-game-btn')
-const instructionBtn = document.getElementById('instructions-btn')
-//fetched elements from gameboard
-
-const gameResetBtn = document.getElementById('game-reset-btn')
-
 let points = 0
-let chosenCards = []
 
 let cardList = [
   {
@@ -15,65 +6,90 @@ let cardList = [
     img: '001-game-controller.png'
   },
   {
-    name: 'tv',
-    img: '002-smart-tv.png'
+    name: 'claw-machine',
+    img: '022-claw-machine.png'
   },
   {
-    name: 'headphones',
-    img: '003-headphones.png'
+    name: 'radio',
+    img: '007-radio.png'
   },
   {
-    name: 'mic',
-    img: '004-microphone.png'
+    name: 'poker',
+    img: '008-poker.png'
   },
   {
-    name: 'speaker',
-    img: '005-speaker.png'
+    name: 'game-console',
+    img: '012-game-console.png'
+  },
+  {
+    name: 'walkman',
+    img: '014-walkman.png'
+  },
+  {
+    name: 'turntable',
+    img: '015-turntable.png'
+  },
+  {
+    name: 'dices',
+    img: '016-dices.png'
+  },
+  {
+    name: 'piano',
+    img: '020-piano-keyboard.png'
   },
   {
     name: 'controller',
     img: '001-game-controller.png'
   },
   {
-    name: 'tv',
-    img: '002-smart-tv.png'
+    name: 'claw-machine',
+    img: '022-claw-machine.png'
   },
   {
-    name: 'headphones',
-    img: '003-headphones.png'
+    name: 'radio',
+    img: '007-radio.png'
   },
   {
-    name: 'mic',
-    img: '004-microphone.png'
+    name: 'poker',
+    img: '008-poker.png'
   },
   {
-    name: 'speaker',
-    img: '005-speaker.png'
+    name: 'game-console',
+    img: '012-game-console.png'
   },
   {
-    name: 'cdPlayer',
-    img: '006-cd-player.png'
+    name: 'walkman',
+    img: '014-walkman.png'
   },
   {
-    name: 'cdPlayer',
-    img: '006-cd-player.png'
+    name: 'turntable',
+    img: '015-turntable.png'
+  },
+  {
+    name: 'dices',
+    img: '016-dices.png'
+  },
+  {
+    name: 'piano',
+    img: '020-piano-keyboard.png'
   }
 ]
 
-//shuffles the images of the array
-cardList.sort(() => 0.5 - Math.random())
-// creates an img element, applies img path to src, and appends images to page
-cardList.forEach((eachImg, idNum) => {
-  let img = document.createElement('img')
-  //img of the front of the card and adds id #
-  img.src = '019-front-masks.png'
-  img.setAttribute('id', idNum)
-  //append images to div
-  const grid = document.querySelector('#gameGrid')
-  grid.appendChild(img)
-  //each image needs a new attribute added to it when clicked
-  img.addEventListener('click', flipImg)
-})
+function beginGame() {
+  cardList.sort(() => 0.5 - Math.random())
+  cardList.forEach((eachImg, idNum) => {
+    let img = document.createElement('img')
+    img.src = '019-front-masks.png'
+    img.setAttribute('id', idNum)
+    const grid = document.querySelector('#game-grid')
+    grid.appendChild(img)
+    img.addEventListener('click', flipImg)
+  })
+}
+
+beginGame()
+
+let chosenCards = []
 
 function flipImg() {
   this.classList.add('selected')
@@ -110,7 +126,7 @@ let checkMatch = () => {
     chosenCards = []
     matchedCards.push(chosenCards[0], chosenCards[1])
     addPoints()
-    if (points === 12) {
+    if (points === 18) {
       alert('You won!!!')
     }
   }
@@ -121,3 +137,11 @@ let addPoints = () => {
   points += 2
   scoreCounter.innerHTML = points
 }
+
+const reset = document.querySelector('.reset-game')
+const gameGrid = document.querySelector('#game-grid')
+
+reset.addEventListener('click', function () {
+  gameGrid.innerHTML = ''
+  beginGame()
+})
