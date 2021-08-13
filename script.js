@@ -76,7 +76,6 @@ let cardList = [
 ]
 
 function beginGame() {
-  let points = 0
   cardList.sort(() => 0.5 - Math.random())
   cardList.forEach((eachImg, idNum) => {
     let img = document.createElement('img')
